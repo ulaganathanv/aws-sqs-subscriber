@@ -1,0 +1,12 @@
+server:
+  port: 8060
+
+cloud:
+  aws:
+    region:
+       static: us-east-1
+       auto: false
+    sqs:
+      url: 
+      pollingThreads: 1
+      pollingRate: 1000
