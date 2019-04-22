@@ -5,13 +5,15 @@ cloud:
   aws:
     stack:
       auto: false
+
     region:
       static: us-east-1
       auto: false
+
     sqs:
       url: https://sqs.ap-south-1.amazonaws.com/750120836441/Test_Queue
       pollingThreads: 1
-      pollingRate: 1000
+      pollingRate: 5000
 
     credentials:
       key:

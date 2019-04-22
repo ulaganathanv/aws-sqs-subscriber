@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.aws.sqs.client.AwsDemoSqsClient;
+import com.aws.sqs.client.AwsSqsClient;
 
 @Component
-public class AwsDemoMessageSubscriberService {
+public class AwsSqsMessageSubscriberService {
 
 	@Autowired
-	private AwsDemoSqsClient basicSqsClient;
+	private AwsSqsClient basicSqsClient;
 
 	@Value("${cloud.aws.sqs.pollingThreads}")
 	private int pollingThreads;

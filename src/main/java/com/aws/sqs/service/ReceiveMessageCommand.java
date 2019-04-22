@@ -1,15 +1,13 @@
 package com.aws.sqs.service;
 
 import com.amazonaws.services.sqs.model.ReceiveMessageResult;
-import com.aws.sqs.client.AwsDemoSqsClient;
-
-import lombok.extern.slf4j.Slf4j;
+import com.aws.sqs.client.AwsSqsClient;
 
 public class ReceiveMessageCommand implements Runnable {
 
-	private AwsDemoSqsClient basicSqsClient;
+	private AwsSqsClient basicSqsClient;
 
-	public ReceiveMessageCommand(AwsDemoSqsClient basicSqsClient) {
+	public ReceiveMessageCommand(AwsSqsClient basicSqsClient) {
 
 		this.basicSqsClient = basicSqsClient;
 	}
@@ -26,5 +24,4 @@ public class ReceiveMessageCommand implements Runnable {
 			}
 		}
 	}
-
 }

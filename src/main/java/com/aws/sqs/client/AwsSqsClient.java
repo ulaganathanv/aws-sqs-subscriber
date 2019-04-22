@@ -2,18 +2,16 @@ package com.aws.sqs.client;
 
 import javax.annotation.PostConstruct;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Value;
 
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 
-import lombok.Getter;
-
 @Component
 @Scope("singleton")
-public final class AwsDemoSqsClient {
+public final class AwsSqsClient {
 
 	@Value("${cloud.aws.region.static}")
 	private String awsRegion;
