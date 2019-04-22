@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AwsSqsSubscriberApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(AwsSqsSubscriberApplication.class, args);
 	}
 }

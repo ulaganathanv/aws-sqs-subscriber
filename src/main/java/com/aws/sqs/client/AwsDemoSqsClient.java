@@ -16,16 +16,37 @@ import lombok.Getter;
 public final class AwsDemoSqsClient {
 
 	@Value("${cloud.aws.region.static}")
-	@Getter
 	private String awsRegion;
-	
+
 	@Value("${cloud.aws.sqs.url}")
-	@Getter
 	private String awsSqsUrl;
-	
-	@Getter
+
 	private AmazonSQS basicSqsClient;
-	
+
+	public String getAwsRegion() {
+		return awsRegion;
+	}
+
+	public void setAwsRegion(String awsRegion) {
+		this.awsRegion = awsRegion;
+	}
+
+	public String getAwsSqsUrl() {
+		return awsSqsUrl;
+	}
+
+	public void setAwsSqsUrl(String awsSqsUrl) {
+		this.awsSqsUrl = awsSqsUrl;
+	}
+
+	public AmazonSQS getBasicSqsClient() {
+		return basicSqsClient;
+	}
+
+	public void setBasicSqsClient(AmazonSQS basicSqsClient) {
+		this.basicSqsClient = basicSqsClient;
+	}
+
 	@PostConstruct
 	private void init() {
 		basicSqsClient =  AmazonSQSClientBuilder.standard().withRegion(awsRegion).build();
