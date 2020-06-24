@@ -29,7 +29,7 @@ public class AwsSqsMessageSubscriberService {
 	private void startSqsPoll() {
 		executor = new ScheduledThreadPoolExecutor(pollingThreads);
 		
-		for(int worker = 0; worker < pollingThreads; worker++) {
+		for(int worker = 1; worker <= pollingThreads; worker++) {
 			executor.scheduleAtFixedRate(new ReceiveMessageCommand(basicSqsClient), 0, pollingRate, TimeUnit.MILLISECONDS);
 		}
 	}
